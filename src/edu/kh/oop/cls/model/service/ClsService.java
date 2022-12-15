@@ -1,6 +1,7 @@
 package edu.kh.oop.cls.model.service;
 
 import edu.kh.oop.cls.model.vo.Student;
+import edu.kh.oop.cls.model.vo.User;
 
 public class ClsService {
 	//클래스 접근 제한자 확인하기
@@ -37,7 +38,7 @@ public class ClsService {
 		//schoolname에 노란줄이 쳐지는 이유 -> 오류가 날정도는 아니지만 작성이 바르지 못해서
 		
 		//static이 붙은 필드(변수)는 
-		//클래스면.뱐수명으로 사요해야한다
+		//클래스면.변수명으로 사용해야한다
 
 		Student.schoolname = "kh";
 		System.out.println("Student.schoolname: " + Student.schoolname);
@@ -55,6 +56,46 @@ public class ClsService {
 		 */
 		
 		
+	}
+	public void ex3() {
+		//생성자 확인 테스트
+		
+		Student s1 = new Student();
+					//기본 생성자
+		//User 기본 생성자를 이용하여 객체 생성
+		User u1 = new User();
+		User u2 = new User();
+		// user객체 필드 초기화 확인
+		System.out.println(u1.getUserId());
+		System.out.println(u1.getUserPw());
+		System.out.println(u1.getUserName());
+		System.out.println(u1.getUserAge());
+		System.out.println(u1.getUserGender());//클래스에서 메서드에 getter setter 작성해야 접근가능
+		
+		System.out.println("=======================");
+		
+		//문제점 : u1이 참조하고 있는 user 객체와
+		// 		 u2가 참조하고 있는 user 객체가 필드의 값이 모두 동일함
+		//		같은 기본자생성자로 user 객체를 생성했기 때문
+		
+		
+		// 해별법 1. setter를 이용하여 새로운 값을 대입
+		
+		u2.setUserId("asdf");
+		u2.setUserPw("asdfgh");
+		u2.setUserName("Kn");
+		u2.setUserAge(19);
+		u2.setUserGender('F');
+		
+		System.out.println(u2.getUserId());
+		System.out.println(u2.getUserPw());
+		System.out.println(u2.getUserName());
+		System.out.println(u2.getUserAge());
+		System.out.println(u2.getUserGender());
+		
+		
+		User u3 = new User("Tset33", "1243235g");
+		User u4 = new User("Test77", "567789jh");
 	}
 
 }
