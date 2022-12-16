@@ -9,7 +9,7 @@ public class ClsRun {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		ClsService cl = new ClsService();
-		User us = new  User();
+		
 	
 		//cl.ex2();
 		cl.ex3();

@@ -60,19 +60,20 @@ public class ClsService {
 	public void ex3() {
 		//생성자 확인 테스트
 		
-		Student s1 = new Student();
 					//기본 생성자
 		//User 기본 생성자를 이용하여 객체 생성
 		User u1 = new User();
-		User u2 = new User();
+		User u2 = new User();//u2,3,4는 지역변수로 인스턴스가 아니다
+		User u3 = new User();
+		User u4 = new User();
 		// user객체 필드 초기화 확인
+		System.out.println("기본생성자");
 		System.out.println(u1.getUserId());
 		System.out.println(u1.getUserPw());
 		System.out.println(u1.getUserName());
 		System.out.println(u1.getUserAge());
 		System.out.println(u1.getUserGender());//클래스에서 메서드에 getter setter 작성해야 접근가능
 		
-		System.out.println("=======================");
 		
 		//문제점 : u1이 참조하고 있는 user 객체와
 		// 		 u2가 참조하고 있는 user 객체가 필드의 값이 모두 동일함
@@ -81,21 +82,47 @@ public class ClsService {
 		
 		// 해별법 1. setter를 이용하여 새로운 값을 대입
 		
+		System.out.println("매개변수 생성자");
 		u2.setUserId("asdf");
 		u2.setUserPw("asdfgh");
 		u2.setUserName("Kn");
 		u2.setUserAge(19);
 		u2.setUserGender('F');
 		
+		System.out.println("=======================");
 		System.out.println(u2.getUserId());
 		System.out.println(u2.getUserPw());
 		System.out.println(u2.getUserName());
 		System.out.println(u2.getUserAge());
 		System.out.println(u2.getUserGender());
 		
+		u3.setUserId("asdfhj");
+		u3.setUserPw("asdfghkjf");
+		u3.setUserName("Knoj");
+		u3.setUserAge(60);
+		u3.setUserGender('M');
 		
-		User u3 = new User("Tset33", "1243235g");
-		User u4 = new User("Test77", "567789jh");
-	}
+		System.out.println("=======================");
+		System.out.println(u3.getUserId());
+		System.out.println(u3.getUserPw());
+		System.out.println(u3.getUserName());
+		System.out.println(u3.getUserAge());
+		System.out.println(u3.getUserGender());
+		
+		u4.setUserId("vbdhw");
+		u4.setUserPw("polkmjn");
+		u4.setUserName("zxcvb");
+		u4.setUserAge(45);
+		u4.setUserGender('M');
+		
+		System.out.println("=======================");
+		System.out.println(u4.getUserId());
+		System.out.println(u4.getUserPw());
+		System.out.println(u4.getUserName());
+		System.out.println(u4.getUserAge());
+		System.out.println(u4.getUserGender());
+		
+		
+		}
 
 }
